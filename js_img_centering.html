@@ -58,8 +58,8 @@ $(function(){
 		$(".js_img_centering").find("img").each(function(){
 			var h = $(this).height();
 			var w = $(this).width();
-			var h_parent = $(".js_img_centering").outerHeight();
-			var w_parent = $(".js_img_centering").outerWidth();
+			var h_parent = $(this).parents(".js_img_centering").outerHeight();
+			var w_parent = $(this).parents(".js_img_centering").outerWidth();
 			$(this).css("height" ,h_parent);
 		});
 	});
