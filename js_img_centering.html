@@ -60,7 +60,18 @@ $(function(){
 			var w = $(this).width();
 			var h_parent = $(this).parents(".js_img_centering").outerHeight();
 			var w_parent = $(this).parents(".js_img_centering").outerWidth();
-			$(this).css("height" ,h_parent);
+			//縦横比率の計算
+			var ratio = w * 0.75 ;
+			//縦長の場合
+			if ( h >= ratio ) {
+				$(this).css("height" ,h_parent);
+				$(this).css("width","auto");
+			//横長の場合
+			}else{
+				$(this).css("height","auto");
+				$(this).css("width","100%");
+				
+			}
 		});
 	});
 });
