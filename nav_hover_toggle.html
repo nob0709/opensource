@@ -1,0 +1,41 @@
+<script>
+//ヘッダードロップダウンメニュー hoverで出るように
+$(function(){
+	var $toggle = $('li.dropdown');
+	var $toggle_down = $('ul.dropdown-menu');
+	$toggle.hover(function(){
+		$toggle_down.stop();
+		$toggle_down.slideToggle('fast');
+	}, function(){
+		$toggle_down.stop();
+		$toggle_down.slideToggle('fast');
+	});
+});
+</script>
+
+
+<div id="navbar" class="collapse navbar-collapse">
+	<div class="container">
+		<ul class="nav navbar-nav h4">
+			<li class="active"><a class="js_root" href=""><span>TOP</span></a></li>
+			<li><a class="js_root" href="list.html"><span>賃貸物件検索</span></a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">こだわり検索</a>
+				<ul class="dropdown-menu h5">
+					<li><a href="#">新築物件</a></li>
+					<li><a href="#">敷金・礼金０</a></li>
+					<li><a href="#">保証人不要</a></li>
+					<!--
+					<li role="separator" class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					-->
+					<li><a href="#">ペットOK</a></li>
+					<li><a href="#">戸建</a></li>
+				</ul>
+			</li>
+			<li><a class="js_root" href="shop.html"><span>店舗紹介</span></a></li>
+			<li><a class="js_root" href="company.html"><span>会社概要</span></a></li>
+			<li><a class="js_root" href="contact"><span>お問い合わせ</span></a></li>
+		</ul>
+	</div>
+</div><!--/.nav-collapse -->
