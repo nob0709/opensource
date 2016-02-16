@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>無題ドキュメント</title>
+
+<script>
+/*トップへ戻るボタン*/
+var $ = jQuery;
+$(function() {
+	var topBtn = $('.js_top_scroll');
+	topBtn.hide();
+	//スクロールが100に達したらボタン表示
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {
+			topBtn.fadeIn();
+		} else {
+			topBtn.fadeOut();
+		}
+	});
+	//スクロールしてトップ
+	topBtn.click(function () {
+		$('body,html').animate({
+			scrollTop: 0
+			}, 500);
+		return false;
+	});
+});
+</script>
+<style>
+.js_top_scroll {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="js_top_scroll">
+	<img class="js_root" src="http://ykdeok.com/wp-content/uploads/2016/02/icon_topscroll.png">
+</div>
+
+
+
+</body>
+</html>
